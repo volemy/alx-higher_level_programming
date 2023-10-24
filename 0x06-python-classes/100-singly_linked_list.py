@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+Node class
+this defines a node of a singly linked list
+"""
+
+
 class Node:
     """
     Represents a node in a singly linked list.
@@ -19,6 +25,9 @@ class Node:
     """
 
     def __init__(self, data, next_node=None):
+        """
+        this initializes a new node with specific data
+        """
         if not isinstance(data, int):
             raise TypeError("data must be an integer")
 
@@ -31,6 +40,9 @@ class Node:
         return self.__data
 
     @data.setter
+    """
+    sets data stored in node to new value
+    """
     def data(self, value):
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
@@ -44,6 +56,7 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
+        """sets the reference to next node in list"""
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object or None")
 
