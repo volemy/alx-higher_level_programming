@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+This program finds and prints all possible solutions to the N-Qeens
+problem and sloves it using backtracking
+"""
+
+
 import sys
 
 def is_safe(board, row, col):
