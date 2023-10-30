@@ -43,6 +43,21 @@ def solve_nqueens(N):
         return
 
     def backtrack(row):
+        """
+    Recursively explore and backtrack to find solutions to the N-Queens
+    problem.
+
+    Args:
+        row (int): The current row being considered for queen placement.
+
+    This function is called recursively to explore all possible placements
+    of queens on the chessboard. It backtracks when it reaches an invalid
+    placement and continues to search for valid solutions.
+
+    If a valid solution is found (all queens placed), it appends the solution
+    to the `solutions` list as a list of row-column pairs and returns.
+
+    """
         if row == N:
             solutions.append([(i, board[i]) for i in range(N)])
             return
