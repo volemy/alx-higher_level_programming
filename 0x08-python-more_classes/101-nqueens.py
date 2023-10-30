@@ -7,6 +7,8 @@ problem and sloves it using backtracking
 
 import sys
 
+
+
 def is_safe(board, row, col):
     """
     Check if it's safe to place a queen at [row, col] on the board.
