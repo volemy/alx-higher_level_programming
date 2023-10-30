@@ -43,7 +43,7 @@ def solve_nqueens(N):
         return
 
     def backtrack(row):
-        """
+    """
     Recursively explore and backtrack to find solutions to the N-Queens
     problem.
 
