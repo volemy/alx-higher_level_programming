@@ -1,0 +1,32 @@
+# Test for text_indentation function
+# Run test with python3 -m doctest -v ./tests/5-text_indentation.txt
+
+# Import the function from the module
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Check for module docstring
+>>> len(text_indentation.__doc__) > 1
+True
+
+# Test the function with different inputs
+
+# Printing a text with sentences separated by '.', '?', and ':'
+>>> text = "This is the first sentence. Is this the second sentence? Yes, it is: the third sentence."
+>>> text_indentation(text)
+This is the first sentence
+
+Is this the second sentence
+
+Yes, it is
+the third sentence
+
+
+# Check for exceptions with invalid inputs
+
+# Passing an integer instead of text (should raise a TypeError)
+>>> text_indentation(4)
+
+# printing a text with no punctuation marks
+>>> text = "This is a test with no punctuation marks"
+>>> text_indentation(text)
+This is a test with no punctuation marks

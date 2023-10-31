@@ -1,0 +1,59 @@
+# Test for add_integer function
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+# Import the function from the module
+>>> add_integer = __import__("0-add_integer").add_integer
+
+# Check for module docstring
+>>> len(add_integer.__doc__) > 1
+True
+
+# Check for function docstring
+>>> len(add_integer.__doc__) > 1
+True
+
+# Test the function with different inputs
+
+# Adding two integers
+>>> add_integer(4, 5)
+9
+
+# Adding negative integers
+>>> add_integer(-4, -5)
+-9
+
+# Adding negative and positive integers
+>>> add_integer(-4, 5)
+1
+
+# Adding floats
+>>> add_integer(4.5, 5.5)
+9
+
+# Adding an integer and a string (should raise a TypeError)
+>>> add_integer(5, "4")
+Traceback (most recent call last):
+        ...
+TypeError: b must be an integer
+
+# Adding two strings (should raise a TypeError)
+>>> add_integer("5", "4")
+Traceback (most recent call last):
+        ...
+TypeError: a and b must be an integer
+
+# Adding a boolean and an integer (should raise a TypeError)
+>>> add_integer(True, 4)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+# Adding an integer and a boolean (should raise a TypeError)
+>>> add_integer(4, True)
+Traceback (most recent call last):
+...
+Ty0peError: b must be an integer

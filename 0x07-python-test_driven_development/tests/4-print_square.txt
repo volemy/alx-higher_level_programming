@@ -1,0 +1,38 @@
+# Run test with python3 -m doctest -v ./tests/4-print_square.txt
+
+# Test for print_square function
+
+# Import the function from the module
+>>> print_square = __import__("4-print_square").print_square
+
+# Check for module docstring
+>>> len(print_square.__doc__) > 1
+True
+
+# Test the function with different inputs
+
+# Printing a square of size 3
+>>> print_square(3)
+###
+###
+###
+
+# Printing a square of size 5
+>>> print_square(5)
+#####
+#####
+#####
+#####
+#####
+
+# Check for exceptions with invalid inputs
+
+# Passing a float as size (should raise a TypeError)
+>>> print_square(3.5)
+
+# Passing a negative size (should raise a ValueError)
+>>> print_square(-2)
+
+# Printing a square of size 1
+>>> print_square(1)
+#

@@ -1,0 +1,32 @@
+# Run test with python3 -m doctest -v ./tests/3-say_my_name.txt
+
+# Test for say_my_name function
+
+# Import the function from the module
+>>> say_my_name=__import__("3-say_my_name").say_my_name
+
+# Check for module docstring
+>>> len(say_my_name.__doc__) > 1
+True
+
+# Check for function docstring
+>>> len(say_my_name.__doc__) > 1
+True
+
+# Test the function with different inputs
+
+# Printing a full name
+>>> say_my_name("Jane", "Dorry")
+My name is Jane Dorry
+
+# Printing a first name only
+>>> say_my_name("Alim")
+My name is Alim
+
+# Check for exceptions with invalid inputs
+
+# Passing an integer as the first name (should raise a TypeError)
+>>> say_my_name(4, "Smith")
+
+# Passing a list as the last name (should raise a TypeError)
+>>> say_my_name("Fran", ["Johnny"])

@@ -1,0 +1,58 @@
+# Run test with python3 -m doctest -v ./tests/2-matrix_divided.txt
+
+# Test for matrix_divided function
+
+# Import the function from the module
+>>> matrix_operations = __import__('2-matrix_divided').matrix_divided
+
+# Check for module docstring
+>>> len(matrix_divided.__doc__) > 1
+True
+
+# Test the function with different inputs
+
+# Valid input with integer division
+>>> matrix = [[4, 8, 12], [16, 20, 24]]
+>>> div = 4
+>>> result = matrix_divided(matrix, div)
+>>> result
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+# Valid input with float division
+>>> matrix = [[5.5, 8.0], [12.0, 14.5]]
+>>> div = 2.5
+>>> result = matrix_divided(matrix, div)
+>>> result
+[[2.2, 3.2], [4.8, 5.8]]
+
+# Division by zero (should raise a ZeroDivisionError)
+>>> matrix = [[5, 10], [15, 20]]
+>>> div = 0
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+# Non-numeric division value (should raise a TypeError)
+>>> matrix = [[1, 2], [3, 4]]
+>>> div = "2"
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+# Invalid matrix with mixed types (should raise a TypeError)
+>>> matrix = [[1, 2], [3, 4.5]]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Invalid matrix with uneven row size (should raise a TypeError)
+>>> matrix = [[1, 2, 3], [4, 5]]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
