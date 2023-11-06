@@ -1,0 +1,71 @@
+# Import the Mylist class if it's in a separate file
+# from your_module import Mylist
+
+# Test case 1: Integers (assume all elements are integers)
+>>> my_list = MyList()
+>>> my_list.append(10)
+>>> my_list.append(3)
+>>> my_list.append(7)
+>>> print(my_list)
+[10, 3, 7]
+>>> my_list.print_sorted()
+[3, 7, 10]
+>>> print(my_list)
+[10, 3, 7]
+
+>>> another_list = MyList()
+>>> another_list.append(1)
+>>> another_list.append(5)
+>>> another_list.append(2)
+>>> print(another_list)
+[1, 5, 2]
+>>> another_list.print_sorted()
+[1, 2, 5]
+>>> print(another_list)
+[1, 5, 2]
+
+# Test case 2: Integers and Strings
+>>> l = MyList()
+>>> l.append(2)
+>>> l.append(8)
+>>> l.append(5)
+>>> print(l)
+[2, 8, 5]
+>>> sorted_list = l.print_sorted()
+>>> print(sorted_list)
+[2, 5, 8]
+>>> id(l) is not id(sorted_list)
+True
+
+# Test case 3: List with only one element
+>>> solo = MyList()
+>>> solo.append(2)
+>>> print(solo)
+[2]
+>>> solo.print_sorted()
+[2]
+>>> print(solo)
+[2]
+
+# Test case 4: Empty list
+>>> empty = MyList()
+>>> print(empty)
+[]
+>>> empty.print_sorted()
+[]
+
+# Test case 5: type, isinstance, issubclass
+>>> type(MyList())
+<class 'your_module.MyList'>
+
+>>> isinstance(MyList, object)
+True
+
+>>> isinstance(MyList, list)
+False
+
+>>> issubclass(MyList, list)
+True
+
+>>> 'print_sorted' in dir(MyList)
+True
