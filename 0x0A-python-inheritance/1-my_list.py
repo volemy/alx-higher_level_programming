@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Mylist class that extends the built-in `list` class and
-provides a method for printing the list in a sorted order
+This defines a class MyList.
 """
 
 
@@ -12,20 +11,12 @@ class MyList(list):
 
     def __init__(self):
         """
-        Initializes an empty Mylist object.
-
+        This initializes a MyList object
         """
         super().__init__()
 
     def print_sorted(self):
         """
         Prints the elements of the list in sorted order
-        Parameters:
-        None
-
-        Returns:
-        None
         """
-        sorted_list = self[:]
-        sorted_list.sort()
-        print("{}".format(sorted_list))
+        print(sorted(self))
