@@ -7,11 +7,6 @@ def add_attribute(obj, a_attr, attr_value):
     """
     This adds a new attribute to an object if possible
 
-    parameters
-    obj (object): object which attribute should be added
-    a_attr (str): Name of new attribute
-    attr-value (any): Value of new attribute
-
     Raises
     TypeError: If object can't have new attributes
     """
@@ -21,4 +16,3 @@ def add_attribute(obj, a_attr, attr_value):
         raise TypeError("can't add new attribute")
 
     setattr(obj, a_attr, attr_value)
-
