@@ -1,7 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 Module 0-lookup:
-This module provides a function to retrieve a list of attributes and methods associated with an object.
+This module provides a function to returns a list of attributes and methods associated with an object.
 """
 
 
