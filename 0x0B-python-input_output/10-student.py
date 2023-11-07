@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module creates a student class
+This module creates a student class.
 """
 
 
@@ -34,4 +34,3 @@ class Student:
                     my_dict.update({attr: self.__dict__[attr]})
             return my_dict
         return self.__dict__.copy()
-
