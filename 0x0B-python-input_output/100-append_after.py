@@ -10,7 +10,7 @@ def append_after(filename="", search_string="", new_string=""):
     """
 
     with open(filename, mode="r") as input_file:
-        text = file.readlines()
+        text = input_file.readlines()
 
     with open(filename, mode="w") as output_file:
         s =""
