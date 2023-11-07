@@ -19,4 +19,3 @@ def append_after(filename="", search_string="", new_string=""):
             if search_string in line:
                 s += new_string
         file_to_write.write(s)
-
