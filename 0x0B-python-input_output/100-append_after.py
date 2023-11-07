@@ -9,7 +9,7 @@ def append_after(filename="", search_string="", new_string=""):
     This appends the new string after search_string in filename.
     """
 
-    with open(filename, mode="r") as inpu_file:
+    with open(filename, mode="r") as input_file:
         text = file.readlines()
 
     with open(filename, mode="w") as output_file:
