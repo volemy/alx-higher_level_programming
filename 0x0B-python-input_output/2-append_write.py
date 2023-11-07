@@ -3,6 +3,7 @@
 This appends a string at the end of a text file
 """
 
+
 def append_write(filename="", text=""):
     """
     This appends a string to the end of a text file in UTF-8 encoding
