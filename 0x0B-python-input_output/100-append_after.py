@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""This inserts line of text to a file."""
+"""
+This inserts line of text to a file.
+"""
 
 
 def append_after(filename="", search_string="", new_string=""):
