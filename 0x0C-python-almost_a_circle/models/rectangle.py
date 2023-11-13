@@ -104,6 +104,9 @@ class Rectangle(Base):
         for _ in range(self.height):
             print("#" * self.width)
     def __str__(self):
+        """
+        This updates the Rectangle class by overriding the str method
+        """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
 
     def display(self):
@@ -167,4 +170,3 @@ if __name__ == "__main__":
 
     r1.update(x=1, height=2, y=3, width=4)
     print(r1)
-
