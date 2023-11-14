@@ -2,7 +2,6 @@
 """
 This module contains the rectangle class
 """
-
 from models.base import Base
 
 
@@ -154,19 +153,12 @@ class Rectangle(Base):
                 elif key == "y":
                     self.y = value
 
-if __name__ == "__main__":
-
-    r1 = Rectangle(10, 10, 10, 10)
-    print(r1)
-
-    r1.update(height=1)
-    print(r1)
-
-    r1.update(width=1, x=2)
-    print(r1)
-
-    r1.update(y=1, width=2, x=3, id=89)
-    print(r1)
-
-    r1.update(x=1, height=2, y=3, width=4)
-    print(r1)
+    def to_dictionary(self):
+        """Return the dictionary representation of a Rectangle"""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
