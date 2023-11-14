@@ -560,3 +560,7 @@ class TestRectangleToDictionary(unittest.TestCase):
         r = Rectangle(8, 4, 2, 1, 7)
         with self.assertRaises(TypeError):
             r.to_dictionary(1)
+
+if __name__ == "__main__":
+    unittest.main()
+
