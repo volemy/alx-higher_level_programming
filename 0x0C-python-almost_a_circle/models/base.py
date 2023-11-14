@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""
-This model contains the base class
-"""
+"""This model contains the base class"""
+import json
+import csv
 
 
 class Base:
@@ -20,20 +20,66 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """
+        This returns JSON string representation if dictionaries
+        """
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        else:
+            return json.dumps(list_dictionaries)
 
-if __name__ == "__main__":
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Saves the JSON string representation of list_objs to a file
+        """
+        filename = cls.__name__ + ".json"
+        with open(filename, mode="w") as file:
+            if list_objs is None:
+                f.write("[]")
+            else:
+                list_dicts = [o.to_dictionary() for o in list_objs]
+                file.write(Base.to_json_string(list_dicts))
 
-    b1 = Base()
-    print(b1.id)
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        This returns list of JSON string representation json_string
+        """
+        if json_string is None or len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
 
-    b2 = Base()
-    print(b2.id)
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        This returns an instance with all attributes set
+        """
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)
+        elif cls.__name__== 'Square':
+            dummy = cls(1)
+        else:
+            dummy = cls()
 
-    b3 = Base()
-    print(b3.id)
+        dummy.update(**dictionary)
+        return dummy
 
-    b4 = Base(12)
-    print(b4.id)
-
-    b5 = Base()
-    print(b5.id)
+    @classmethod
+    def load_from_file(cls):
+        """
+        This returns instances with all attributes set
+        """
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, 'r') as file:
+                data = file.read()
+                if not data:
+                    return []
+                else:
+                    list_dicts = cls.from_json_string(data)
+                    return [cls.create(**item) for item in list_dicts]
+        except FileNotFoundError:
+            return []
