@@ -40,10 +40,8 @@ class Node:
         return self.__data
 
     @data.setter
-    """
-    sets data stored in node to new value
-    """
     def data(self, value):
+        """ Sets the data  stored in  node to a new value"""
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
 
