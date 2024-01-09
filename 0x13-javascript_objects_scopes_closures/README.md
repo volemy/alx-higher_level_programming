@@ -1,5 +1,5 @@
 # Project: 0x13. JavaScript - Objects, Scopes and Closures
-This project, 0x13. JavaScript - Objects, Scopes and Closures, delves into the core concepts of JavaScript, focusing on objects, scopes, and closures. By completing this project, you'll enhance your understanding of these fundamental topics in JavaScript programming.
+This project - Objects, Scopes and Closures, delves into the core concepts of JavaScript, focusing on objects, scopes, and closures. By completing this project, you'll enhance your understanding of these fundamental topics in JavaScript programming.
 
 ## Learning Objectives
 Upon completing this project, you should be able to:
