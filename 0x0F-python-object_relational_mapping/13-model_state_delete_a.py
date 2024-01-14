@@ -21,8 +21,10 @@ def delete_state_a():
 
     session = Session(engine)
 
-    states_to_delete = session.query(State).filter(state.name.like(%a%)).all()
-    for state in states_to_delete:
+    states = session.query(State).all()
+
+    for state in states:
+        if 'a' in state.name:
             session.delete(state)
 
     session.commit()
