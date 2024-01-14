@@ -20,7 +20,7 @@ def list_all_states():
     session = Session(engine)
 
 
-    rows = session.query(State).order_by(state.id).all()
+    rows = session.query(State).all()
 
     for row in rows:
         print(f"{row.id}: {row.name}")
