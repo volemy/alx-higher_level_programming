@@ -10,7 +10,7 @@ from sqlalchemy.orm import Session
 from model_state import Base, State
 
 
-def del_state_a():
+def delete_state_a():
     """
     This method deletes states names containing 'a'
     """
@@ -21,9 +21,8 @@ def del_state_a():
 
     session = Session(engine)
 
-    states = session.query(State).all()
-    for state in states:
-        if 'a' in state.name:
+    states_to_delete = session.query(State).filter(state.name.like(%a%)).all()
+    for state in states_to_delete:
             session.delete(state)
 
     session.commit()
@@ -31,4 +30,4 @@ def del_state_a():
     session.close()
 
 if __name__ == "__main__":
-    del_state_a()
+    delete_state_a()
