@@ -20,10 +20,8 @@ def select_states_arg():
 
     cursor = db.cursor()
 
-    query = (
-    "SELECT * FROM states WHERE name = %s ORDER BY id ASC".format(argv[4])
-    )
-    cursor.execute(query)
+    cursor.execute("SELECT * FROM states WHERE name = '{}'\
+                    ORDER BY id ASC".format(argv[4]))
 
     rows = cursor.fetchall()
     for i in rows:
