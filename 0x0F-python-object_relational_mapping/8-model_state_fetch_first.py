@@ -5,7 +5,7 @@ Script that prints the first state from the database using SQLAlchemy
 
 from sys import argv
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Sessionmaker
 from model_state import Base, State
 
 if __name__ == "__main__":
