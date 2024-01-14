@@ -18,8 +18,11 @@ def get_states_no_injectn():
                         db=argv[3])
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name='{:s}'\
-                   ORDER by id ASC".format(argv[4]))
+
+
+    query = "SELECT * FROM states WHERE name LIKE %s ORDER by id ASC"
+    cursor.execute(query, (argv[4],))
+
     rows = cursor.fetchall()
     for row in rows:
         print(row)
