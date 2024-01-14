@@ -19,14 +19,10 @@ def list_cities():
 
     cursor = db.cursor()
 
-    query = """
-    SELECT cities.id, cities.name, states.name
-    FROM cities
-    JOIN states ON cities.state_id = states.id
-    ORDER BY cities.id ASC
-    """
+    cursor.execute("SELECT cities.id, cities.name, states.name"
+               " FROM cities JOIN states ON cities.state_id = states.id"
+               " ORDER BY cities.id ASC")
 
-    cursor.execute(query)
 
     rows = cursor.fetchall()
     for row in rows:
