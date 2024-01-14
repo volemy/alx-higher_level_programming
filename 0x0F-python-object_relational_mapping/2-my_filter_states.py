@@ -20,12 +20,13 @@ def select_states_arg():
 
     cursor = db.cursor()
 
-    cursor.execute(
-            "SELECT * FROM states WHERE name = %s ORDER BY id ASC",
-            (argv[4],))
+    query = (
+    "SELECT * FROM states WHERE name = %s ORDER BY id ASC".format(argv[4])
+    )
+    cursor.execute(query)
 
-    row = cursor.fetchall()
-    for i in row:
+    rows = cursor.fetchall()
+    for i in rows:
         print(i)
 
     cursor.close()
