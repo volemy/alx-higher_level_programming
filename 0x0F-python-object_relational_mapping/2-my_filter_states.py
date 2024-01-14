@@ -7,7 +7,7 @@ import MySQLdb
 from sys import argv
 
 
-def get_states_arg():
+def select_states_arg():
     """
     This retrieves and prints a list of states
     whose names match the provided argument, sorted by states.id
@@ -20,11 +20,12 @@ def get_states_arg():
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE '{:s}'\
-                    ORDER BY id ASC".format(argv[4]))
+    cursor.execute(
+            "SELECT * FROM states WHERE name = %s ORDER BY id ASC",
+            (argv[4],))
 
-    rows = cursor.fetchall()
-    for i in rows:
+    row = cursor.fetchall()
+    for i in row:
         print(i)
 
     cursor.close()
@@ -32,4 +33,4 @@ def get_states_arg():
 
 
 if __name__ == "__main__":
-    get_states_arg()
+    select_states_arg()
