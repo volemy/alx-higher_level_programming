@@ -1,7 +1,12 @@
 #!/usr/bin/python3
+"""
+Module to find a peak in list of unsorted integers
+"""
+
+
 def find_peak(list_of_integers):
     """
-    Find a peak in list of unsorted integers
+    This finds a peak in list of unsorted integers
     """
     if not list_of_integers:
         return None
