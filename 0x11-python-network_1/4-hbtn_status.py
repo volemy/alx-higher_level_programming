@@ -12,9 +12,9 @@ def get_status():
     response = requests.get('https://alx-intranet.hbtn.io/status')
     body = response.content
     print("Body response:")
-        print("     -type: {}".format(content_type))
+        print("     -type: <class 'bytes>'"
         print("     -content: {}".format(body))
-        print("     -utf8 content: {}".format(utf8_content))
+        print("     -utf8 content: {}".format(body.decode('utf8_content'))
 
 if __name__ == "__main__":
     get_status()
