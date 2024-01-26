@@ -8,6 +8,10 @@ import sys
 
 
 def get_header(url):
+    """
+    python script that takes in a URL, sends request to URL
+    and displays vale of X-Request-Id
+    """
     with urllib.request.urlopen(url) as response:
         headers = response.getheaders()
         for header in headers:
