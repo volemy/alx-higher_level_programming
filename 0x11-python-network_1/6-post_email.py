@@ -7,6 +7,10 @@ import sys
 
 
 def send_post_request(url, email):
+    """
+    Python script that takes in a URL and an email address,
+    sends a POST request to the passed URL
+    """
     data = {'email': email}
     response = requests.post(url, data=data)
     body = response.content
