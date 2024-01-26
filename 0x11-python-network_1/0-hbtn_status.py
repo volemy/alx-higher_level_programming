@@ -5,6 +5,7 @@ https://alx-intranet.hbtn.io/status
 """
 import urllib.request
 
+
 def fetch_status():
     """
     script to fetch https://alx-intranet.hbtn.io/status
