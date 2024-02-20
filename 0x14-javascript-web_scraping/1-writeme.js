@@ -7,7 +7,5 @@ const data = process.argv[3];
 fs.writeFile(path, data, (error) => {
 	if (error) {
 		console.error(error);
-	}else {
-		console.log('File written sucessfully');
 	}
 });
